@@ -96,4 +96,18 @@ public:
     }
 };
 
+// In boardgame_classes.h
+class HumanPlayer : public player {
+public:
+    HumanPlayer(const string& name, char sym) : player(name, sym) {}
+
+    pair<int, int> get_move(const Board& board) override {
+        int x, y;
+        cout << get_name() << ", enter your move (row and column): ";
+        cin >> x >> y;
+        return {x, y};
+    }
+};
+
+
 #endif
